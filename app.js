@@ -13,7 +13,7 @@ $(document).ready(function(){
     loadPage();
 });
 function loadPage(url) {
-
+$('body').append('<div id="progress"><br><img src="loading_1.gif" width="40" height="40"><br>Loading</div>');
    if (url == undefined) {
       $('#news-strip').load('http://www.memverse.com #news-strip ul', hijackLinks);
    } else {
@@ -25,5 +25,5 @@ function hijackLinks() {
         e.preventDefault();
         loadPage(e.target.href);
     });
-
+$('#progress').remove();
 }
